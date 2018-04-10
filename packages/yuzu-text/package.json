@@ -8,7 +8,7 @@
   "source": "build/index.js",
   "scripts": {
     "babel": "babel --presets=react --plugins=transform-object-rest-spread --no-babelrc -d build --ignore '*.test.js' src",
-    "bundle": "microbundle build --compress false --external all --jsx React.createElement",
+    "bundle": "microbundle build --external all --jsx React.createElement",
     "build": "npm run lint && npm run babel && npm run bundle",
     "dev": "jest --watchAll",
     "lint": "standard 'src/**/*.js' --fix",
