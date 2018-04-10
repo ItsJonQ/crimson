@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.m.js",
-  "source": "src/index.js",
+  "source": "build/index.js",
   "scripts": {
+    "babel": "babel --presets=react --plugins=transform-object-rest-spread --no-babelrc -d build --ignore '*.test.js' src",
     "bundle": "microbundle build --compress false --external all --jsx React.createElement",
-    "build": "npm run lint && npm run bundle",
+    "build": "npm run lint && npm run babel && npm run bundle",
     "dev": "jest --watchAll",
     "lint": "standard 'src/**/*.js' --fix",
     "test": "jest"
@@ -17,6 +18,8 @@
   "license": "MIT",
   "devDependencies": {
     "babel-core": "6.26.0",
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-jest": "22.4.3",
