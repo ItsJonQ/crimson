@@ -36,6 +36,12 @@
     "classnames": "2.2.5",
     "prop-types": "^15"
   },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
   "jest": {
     "setupFiles": [
       "<rootDir>/scripts/test-setup.js"
